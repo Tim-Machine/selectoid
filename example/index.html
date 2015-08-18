@@ -1,0 +1,59 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+<p>If you are currently checkign this out things may be broken. I've found some issues that affect every browser execpt Chrome. I am in the process of fixing them now.</p>
+<h2>Create new Inventory Item</h2>
+<form>
+    <div>
+        <label>Item Name</label><br/>
+        <input value="Gas Stove" disabled="disabled"/>
+    </div>
+    <div>
+        <label>click to select a product category</label>
+        <select id="selectoid">
+            <option value="0" disabled="disabled">Select one</option>
+        </select>
+    </div>
+</form>
+<script src="http://localhost:8080/webpack-dev-server.js"></script>
+<script src="./assets/bundle.js" ></script>
+
+<script>
+    var target = document.getElementById('selectoid');
+    var options = {
+        // name : value
+        'Living Room': 1,
+        'Dinning Room': 2,
+        'Kitchen': {
+            'Glass Ware': 1717,
+            'Cook Ware': 2752,
+            'Appliances': {
+                'Electric': {
+                    'stove': 123123,
+                    'griddle': 345435,
+                },
+                'Gas': {
+                    'stove': 354435,
+                    'thing': 34636,
+                }
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var example = new Selectoid(target, options);
+    });
+
+
+</script>
+
+</body>
+
+
+
+
+</html>
